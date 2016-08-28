@@ -52,7 +52,7 @@ group :development do
   gem 'web-console', '~> 2.0'
 end
 group :test do
-  gem 'selenium-webdriver'
+ # gem 'selenium-webdriver'
   gem 'factory_girl_rails'
   gem 'capybara'
    gem 'database_cleaner'
