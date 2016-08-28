@@ -8,26 +8,32 @@ namespace :db do
 end
 
 def make_users
+   include CarrierWave::Test::Matchers
+   
+   tmp=File.open("1-1106.jpg")
+
   admin = User.create!(name:     "Example User",
                        email:    "example@railstutorial.org",
                        password: "foobar",
                        password_confirmation: "foobar",
-                       admin: true)
+                       admin: true,avatar: tmp)
+
+
   9.times do |n|
     name  = Faker::Name.name
     email = "example-#{n+1}@railstutorial.org"
     password  = "password"
-    avatar = "http://risovach.ru/upload/2013/08/mem/vse-ochen-ploho_27788043_orig_.png"
+
     User.create!(name:     name,
                  email:    email,
                  password: password,
-                 password_confirmation: password)
+                 password_confirmation: password,avatar:tmp)
   end
 end
 
 def make_microposts
   users = User.limit(6)
-  50.times do
+  5.times do
     content = Faker::Lorem.sentence(5)
     users.each { |user| user.microposts.create!(content: content) }
   end

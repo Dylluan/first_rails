@@ -58,6 +58,7 @@ describe "User pages" do
 
     it { should have_content(user.name) } 
     it { should have_title(user.name) }
+
      describe "follow/unfollow buttons" do
       let(:other_user) { FactoryGirl.create(:user) }
       before { sign_in user }

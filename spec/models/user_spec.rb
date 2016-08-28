@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+include CarrierWave::Test::Matchers
 require 'spec_helper'
 
 describe User do
@@ -10,7 +10,8 @@ describe User do
   
   it {should respond_to(:name)}
   it {should respond_to(:email)}
-  it { should respond_to(:password_digest) }
+  it {should respond_to(:password_digest) }
+  it {should respond_to(:avatar)}
   
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
@@ -124,6 +125,17 @@ describe User do
     before { @user.save }
     it { expect(@user.remember_token).not_to be_blank }
   end
+
+  describe "with avatar" do 
+   before do 
+     @user.avatar=File.open("1-1106.jpg")
+     @user.save
+   end
+   it{expect(@user.avatar.url).not_to be_nil}
+   it{expect(@user.avatar.url).not_to eq('#')}
+
+  end
+
   
   describe "micropost associations" do
 
