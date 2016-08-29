@@ -15,6 +15,6 @@
 <%= f.label :avatar %>
 <p>
     <%= image_tag(@user.avatar_url) if @user.avatar? %>
-    <%= f.file_field :avatar %>
-    <%= f.hidden_field :avatar_cache %>
+    <%= f.file_field :avatar, accept: 'image/png,image/gif,image/jpeg' %>
+    <%= f.hidden_field :avatar_cache, accept: 'image/png,image/gif,image/jpeg' %>
   </p>

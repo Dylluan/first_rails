@@ -2,7 +2,7 @@ class Picattachment < ActiveRecord::Base
 
  belongs_to :micropost
 mount_uploader :picture, PictureUploader
-
+validates :picture, format: { with: /\A.*\.(jpg|jpeg|png|gif)\z/}
 
 def self.image_attachment(micropost)
     # images_ids = "SELECT picattachment_id FROM picattachments
