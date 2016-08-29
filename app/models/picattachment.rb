@@ -1,7 +1,7 @@
 class Picattachment < ActiveRecord::Base
 
  belongs_to :micropost
-mount_uploader :picture, AvatarUploader
+mount_uploader :picture, PictureUploader
 
 
 def self.image_attachment(micropost)
