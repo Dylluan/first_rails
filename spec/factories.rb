@@ -15,4 +15,8 @@ FactoryGirl.define do
     content "Lorem ipsum"
     user
   end
+  factory :picattachment do 
+    picture File.open("001.jpg")
+    
+  end
 end

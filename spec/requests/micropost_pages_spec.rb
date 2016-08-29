@@ -28,8 +28,20 @@ describe "Micropost pages" do
       it "should create a micropost" do
         expect { click_button "Post" }.to change(Micropost, :count).by(1)
       end
-    end
-  end
+
+
+
+      describe "attachments" do 
+        before {page.attach_file("micropost_picattachment_picture", "C:/Users/Dylluan/Desktop/9eec23c159641c0c7da64692dab5760e.jpg") }
+        it "should create a micropost with one attacment" do
+        
+         expect { click_button "Post" }.to change(Picattachment, :count).by(1)
+       end
+
+     end
+end
+ end
+
   describe "micropost destruction" do
     before { FactoryGirl.create(:micropost, user: user) }
 

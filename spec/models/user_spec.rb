@@ -136,6 +136,7 @@ describe User do
 
   end
 
+
   
   describe "micropost associations" do
 

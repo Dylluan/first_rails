@@ -21,7 +21,11 @@ database.yml
 doc/
 *.swp
 *~
+*.jpg
+*.jpeg
+*.png
 .project
 .DS_Store
 .idea
 .secret
+/public/uploads

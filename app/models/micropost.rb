@@ -1,7 +1,10 @@
 class Micropost < ActiveRecord::Base
 
 	 belongs_to :user
-   # has_many :pictures, dependent: :destroy
+    has_many :picattachments, dependent: :destroy
+
+accepts_nested_attributes_for :picattachments
+
 	  default_scope -> { order('created_at DESC') }
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }
