@@ -4,6 +4,12 @@
       <%= link_to feed_item.user.name, feed_item.user %>
     </span>
     <span class="content"><%= feed_item.content %></span>
+    <% unless feed_item.images.empty? %>
+    
+  <ul class="attachments">
+   	 <%= render partial: 'shared/images', collection: feed_item.images %>
+  </ul> 
+<% end %>
     <span class="timestamp">
       Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
     </span>
