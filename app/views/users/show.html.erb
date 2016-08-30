@@ -1,6 +1,6 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="span4">
+<div>
+  <aside>
     <section>
       <h1>
         <%= avatar_for(@user,"md") %>
@@ -11,15 +11,11 @@
       <%= render 'shared/stats' %>
     </section>
   </aside>
-   <div class="span8">
+   <div>
     <%= render 'follow_form' if signed_in? %>
-    <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
-      <ol class="microposts">
+      <span><%= pluralize(@user.microposts.count, "micropost") %></span>
+    <%= render  'shared/feed', obj: @microposts %>
+    
 
-       <%= render partial: 'shared/post', collection: @microposts, as: :post %>
-      </ol>
-      <%= will_paginate @microposts %>
-    <% end %>
   </div>
 </div>

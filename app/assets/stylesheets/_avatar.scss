@@ -1,13 +1,20 @@
-.avatar{
- background: #999999;
-margin:5px;
-float:left;
- .sm{
-  width:64px;
-  height: 64px;
-}
-.md{
+
+.placeholder-md{
   width:100px;
   height: 100px;
+  background: #333333;
+
 }
+.placeholder-sm{
+  width:64px;
+  height: 64px;
+  background: #333333;
+
+}
+.avatar{
+
+	float:left;
+	display:block;
+	left:0;
+	top:0;
 }

@@ -1,33 +1,55 @@
-/* microposts */
+.posts
+{
+    list-style: none;
+}
 
 .post
 {
-    width: 700px;
+     width: 100%;
     margin: 10px auto;
-    padding: 5px;
+    padding: 10px;
 
     color: black;
-    background-color: #eee;
-    .user:before,
-    .user:after
+    border: #f8f2f2 solid 1px;
+    background-color: #fff;
+    .post_info
+    {
+        position: relative;
+        @import 'avatar';
+        .delete
+        {
+            position: absolute;
+            top: 0;
+            right: 0;
+            img{
+            width: 20px;}
+        }
+    }
+    .post_info:before,
+    .post_info:after
     {
         display: block;
         clear: both;
 
         content: '';
     }
-}
-.content
-{
-    display: block;
-}
-
-.timestamp {
-  color: #333333;
-}
-.attachments{
-  list-style: none; 
-  li{
-    display:inline-block;
-  }
+    .content
+    {
+        display: block;
+        .post_image{
+          max-width: 200px;
+        }
+    }
+    .timestamp
+    {
+        color: #333;
+    }
+    .attachments
+    {
+        list-style: none;
+        li
+        {
+            display: inline-block;
+        }
+    }
 }

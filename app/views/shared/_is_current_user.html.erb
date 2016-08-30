@@ -1,5 +1,5 @@
 <% if current_user?(obj.user) %>
-    <%= link_to "delete", obj, method: :delete,
+    <%= link_to image_tag("http://www.energeticsource.com/files/9914/6608/3923/close_grey_192x192.png"), obj, method: :delete,
                                      data: { confirm: "You sure?" },
-                                     title: obj.content %>
+                                    class:'delete' %>
   <% end %>

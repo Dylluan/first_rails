@@ -1,0 +1,83 @@
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body{
+background-color: #fef8f8;
+padding-top: 60px;
+
+}
+
+ul,ol{
+  padding:0;
+}
+
+
+#logo
+{	
+    font-size: 1.7em;
+    font-weight: bold;
+    line-height: 1;
+
+    float: left;
+
+    margin-right: 10px;
+    padding-top: 9px;
+
+    letter-spacing: -1px;
+    text-transform: uppercase;
+
+    color: #fff;
+}
+
+#logo:hover
+{
+    text-decoration: none;
+    color: #fff;
+}
+
+header{
+padding-top:5px;
+
+}
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
+}
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}

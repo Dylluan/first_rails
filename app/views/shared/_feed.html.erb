@@ -1,6 +1,6 @@
-<% if @feed_items.any? %>
-  <ol class="microposts">
- <%= render partial: 'shared/post', collection: @feed_items, as: :post %>
-  </ol>
-  <%= will_paginate @feed_items %>
+<% if obj.any? %>
+  <ul class="posts span8">
+ 	<%= render partial: 'shared/post', collection: obj, as: :post %>
+  </ul>
+  <%= will_paginate obj %>
 <% end %>

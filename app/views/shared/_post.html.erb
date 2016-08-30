@@ -1,17 +1,24 @@
+
 <li id="<%= post.id %>" class="post">
 
-	<div class="user"> 
-		<%= link_to avatar_for(post.user, 'sm'), post.user %>
-		<%= link_to post.user.name, post.user %>
-		<span class="timestamp"><%= time_ago_in_words(post.created_at) %> ago</span>
+	<div class="post_info"> 
+		<%= link_to avatar_for(post.user, 'sm'), post.user, class: 'avatar' %>
+		<%= link_to post.user.name, post.user %><br>
+		<%= link_to "#{time_ago_in_words(post.created_at)} ago",'#'  , class: "timestamp"%>
 		<%= render 'shared/is_current_user', obj: post %>
 	</div>
 	<div class="content">
 		<% unless post.images.empty? %>
 			<ul class="attachments">
-				<%= render partial: 'shared/images', collection: post.images %>
+				<% post.images.each do |image| %>
+					<li>
+						<%= image_tag(image.picture,class: "post_image") %> 
+					</li>
+          		<% end %>
 			</ul> 
-			<%= post.content %>
 		<% end %>
+		
+		<span class="text"><%= post.content %></span>
 	</div>
 </li>
+
