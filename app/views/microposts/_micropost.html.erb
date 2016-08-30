@@ -1,8 +1,17 @@
-<li>
-	<%= avatar_for(@user,"sm") %>
-  <span class="content"><%= micropost.content %></span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(micropost.created_at) %> ago.
-  </span>
-   <%= render 'shared/is_current_user', obj: micropost %>
+<li class="post">
+       <div class="user"> 
+    <%= link_to avatar_for(micropost.user, 'sm'), micropost.user %>
+     <%= link_to micropost.user.name, micropost.user %>
+     <span class="timestamp"><%= time_ago_in_words(micropost.created_at) %> ago</span>
+    <%= render 'shared/is_current_user', obj: micropost %>
+    </div>
+    <div class="content">
+    <% unless micropost.images.empty? %>
+    
+  <ul class="attachments">
+   	 <%= render partial: 'shared/images', collection: micropost.images %>
+  </ul>
+    <%= micropost.content %>
+<% end %>
+</div>
 </li>
