@@ -1,6 +1,6 @@
 <%= form_for(@micropost, html: { multipart: true }) do |f| %>
 	<%= render 'shared/error_messages', object: f.object %>
-	
+	<%= link_to avatar_for(@micropost.user, "sm"), @micropost.user, class:"avatar"%>
 	<%= f.text_area :content, placeholder: "Compose new micropost..." %>
 	<%= f.fields_for Picattachment do |p| %>
 		<div>

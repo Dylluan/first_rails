@@ -1,0 +1,26 @@
+#new_micropost{
+	background-color: #FFF;
+	position: relative;
+	padding:10px;
+	textarea{
+		width: 100%;
+		border:none;
+		padding:5px 40px 5px 60px;
+		resize: none;
+	}
+	.avatar{
+		position:absolute;
+		top:0;
+		left:0;
+		z-index:100;
+	}
+	input[type='submit']{
+		float:right;
+	}
+}
+#new_micropost:before,#new_micropost:after{
+content:"";
+display:block;
+clear: both;
+
+}
