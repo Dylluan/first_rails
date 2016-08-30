@@ -1,0 +1,57 @@
+.profile
+{
+    aside
+    {
+        float: left;
+        img
+        {
+            max-width: 100%;
+            height: auto;
+
+            border: 5px solid white;
+        }
+        .stats
+        {
+            margin: 10px 0;
+
+            text-align: center;
+
+            border: #f8f2f2 solid 1px;
+            background-color: #fff;
+            a
+            {
+                display: inline-block;
+
+                padding: 5px;
+            }
+        }
+    }
+    .main
+    {
+        float: right;
+        h2
+        {
+            margin: 0;
+            padding: 10px;
+
+            border: #f8f2f2 solid 1px;
+            background-color: #fff;
+        }
+        .post_count
+        {
+            margin: 10px 0;
+            padding: 10px;
+
+            border: #f8f2f2 solid 1px;
+            background-color: #fff;
+        }
+    }
+}
+.profile:before,
+.profile:after
+{
+    display: block;
+    clear: both;
+
+    content: '';
+}

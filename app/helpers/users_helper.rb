@@ -7,6 +7,7 @@ module UsersHelper
 			url= user.avatar.md 
 		when "sm"
 			url= user.avatar.sm
+		else url=user.avatar
 		end
 
 		content_tag(:div, image_tag(url), class: "placeholder-#{v}" )
